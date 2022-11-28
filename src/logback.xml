@@ -1,0 +1,11 @@
+<configuration>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%cyan(%date{yyy-MM-dd'T'HH:mm:ss.SSSXXX,UTC}) %green([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg [%X{request-id}]%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_LEVEL:-INFO}">
+        <appender-ref ref="Console"/>
+    </root>
+</configuration>
